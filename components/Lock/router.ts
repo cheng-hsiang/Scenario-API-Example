@@ -1,9 +1,10 @@
 import express from "npm:express@4.18.2";
-import {SharedLock} from './controller.ts'
+import {SharedLock,ExclusiveLock} from './controller.ts'
 const Router = express.Router();
 
 
 
-Router.get('/',SharedLock)
+Router.post('/SharedLock/:id',SharedLock)
+Router.patch('ExclusiveLock/:id',ExclusiveLock)
 
 export default Router
